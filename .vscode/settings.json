@@ -1,0 +1,98 @@
+{
+    // Telemetry
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "githubPullRequests.telemetry.enabled": false,
+
+    // Editor settings
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "window.zoomLevel": -1,
+    "editor.quickSuggestions": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "workbench.settings.editor": "json",
+    "window.titleBarStyle": "custom",
+    // "workbench.panel.location": "bottom",
+
+    // Search settings
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/flow-typed": true,
+        "**/.git": true,
+        "**/.github": true,
+        "**/.idea": true,
+        "**/app": true,
+        "**/backend/**/migrations": true,
+        "**/bundle.js": true,
+        "**/old-bundle.js": true,
+        "**/new-bundle.js": true,
+        "**/coverage": true,
+        "**/.jsx.html": true,
+        "**/data": true,
+        "**/*.js.map": true,
+        "**/*.svg": true,
+        "**/*.sfd": true,
+        "**/*.js.snap": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/tmp/**": true,
+        "**/bower_components/**": true,
+        "**/dist/**": true,
+        "**/.github/**": true,
+        "**/.idea/**": true,
+        "**/app/**": true,
+        "**/bundle.js": true,
+        "**/old-bundle.js": true,
+        "**/new-bundle.js": true,
+        "**/coverage/**": true,
+        "**/.jsx.html": true,
+        "**/learner-driver-redirect/**": true,
+        "**/mails/**": true,
+        "**/data/**": true,
+        "**/*.js.map": true
+    },
+
+    // Frontend development
+    "editor.tabSize": 2,
+    "eslint.packageManager": "yarn",
+    "flow.useNPMPackagedFlow": true,
+    "flow.showUncovered": true,
+    "javascript.validate.enable": false,
+    // Use 'prettier-eslint' instead of 'prettier'.
+    "prettier.eslintIntegration": true,
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.trailingComma": "es5",
+    "prettier.semi": true,
+    "javascript.format.enable": false,
+    // Associate .js files as JavaScript React
+    "files.associations": {
+        "*.js": "javascriptreact",
+        "*.spec.js": "javascript",
+    },
+
+    // Backend development
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "${workspaceFolder}/venv/bin/python",
+    "python.venvPath": "${workspaceFolder}/venv",
+    "python.venvFolders": [
+        "venv",
+    ],
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--max-line-length=100"
+    ],
+}
