@@ -1,6 +1,5 @@
 " General
 set lazyredraw
-set visualbell
 
 " UI
 set number
