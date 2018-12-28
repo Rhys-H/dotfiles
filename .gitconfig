@@ -100,7 +100,7 @@
 	}; f"
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesFile = ~/.gitignore
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
@@ -146,7 +146,7 @@
 
 [commit]
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	gpgSign = true
 
 [diff]
 	# Detect copies as well as renames
