@@ -187,6 +187,9 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
 [include]
 	path = ~/.gitconfig_local
 
