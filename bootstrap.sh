@@ -3,3 +3,4 @@ for file in $( ls -A | grep -vE 'bootstrap.sh|\.vscode|\.exclude*|\.git$|\.gitig
 done
 echo "Symlinking complete"
 
+export PYTHONSTARTUP=~/.pythonrc.py
