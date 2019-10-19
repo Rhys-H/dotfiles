@@ -10,3 +10,7 @@ Feel free to share and use!
 
 1. Run from the `dotfiles` directory
 2. Run: `./bootstrap.sh`
+
+## git-config
+
+After running the bootstrap script the `.gitconfig` file will be copied to your home directory. The `.gitconfig` file in this repo refers to a `.gitconfig_local` file for user credentials. For this reason it is **not recommended** to commit this file into version control.
