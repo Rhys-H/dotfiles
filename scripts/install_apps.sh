@@ -18,17 +18,18 @@ if [[ $yes == y* ]]; then
         bleachbit \
         build-essential \
         chromium-browser \
+        firefox \
         gnome-tweaks \
         gnupg-agent \
         gpa \
         htop \
-        hub \
         libssl-dev \
         neofetch \
         powertop \
         python3-dev \
         python3-venv \
         seahorse \
+        snapd \
         tlp \
         tlp-rdw \
         ttf-mscorefonts-installer \
@@ -37,6 +38,8 @@ if [[ $yes == y* ]]; then
         vlc \
         zsh \
         -y
+
+    sudo snap install --classic hub
 
     echo "Installing apps that don't require installing recommendations"
     sudo apt install --no-install-recommends \
@@ -48,6 +51,12 @@ if [[ $yes == y* ]]; then
         libffi-dev \
         yarn \
         -y
+
+    echo "Cleaning up after installing apps"
+    sudo apt autoremove -y
+    sudo apt autoclean -y
+    sudo apt clean
+    sudo apt purge
 else
     echo "Not installing apps"
 fi
