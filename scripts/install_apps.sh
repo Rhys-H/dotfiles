@@ -30,6 +30,7 @@ if [[ $yes == y* ]]; then
         python3-venv \
         seahorse \
         snapd \
+        software-properties-common \
         tlp \
         tlp-rdw \
         ttf-mscorefonts-installer \
