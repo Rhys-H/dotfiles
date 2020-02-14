@@ -95,6 +95,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 export NVM_DIR="$HOME/.nvm"
