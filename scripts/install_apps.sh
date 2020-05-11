@@ -152,12 +152,3 @@ if [[ $yes == y* ]]; then
 else
     echo "Not installing PostgreSQL"
 fi
-
-# GDAL
-echo "Install GDAL?"
-read yes
-if [[ $yes == y* ]]; then
-    sudo apt install gdal-bin
-else
-    echo "Not installing GDAL"
-fi
