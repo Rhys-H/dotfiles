@@ -44,12 +44,27 @@ if [[ $yes == y* ]]; then
 
     echo "Installing apps that don't require installing recommendations"
     sudo apt install --no-install-recommends \
-        libpq-dev \
+        make \
+        build-essential \
+        libssl-dev \
+        zlib1g-dev \
+        libbz2-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        wget \
+        curl \
+        llvm \
+        libncurses5-dev \
+        xz-utils \
+        tk-dev \
         libxml2-dev \
+        libxmlsec1-dev \
+        libffi-dev \
+        liblzma-dev
+        libpq-dev \
         libxslt1-dev \
         libldap2-dev \
         libsasl2-dev \
-        libffi-dev \
         yarn \
         -y
 
