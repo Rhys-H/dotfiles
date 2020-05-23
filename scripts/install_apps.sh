@@ -77,17 +77,6 @@ else
     echo "Not installing apps"
 fi
 
-# Zsh
-echo "Install Oh My Zsh?"
-read yes
-if [[ $yes == y* ]]; then
-    cd ~/
-    # Oh my zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-    echo "Not installing Oh My Zsh"
-fi
-
 # Kitty
 echo "Install Kitty terminal?"
 read yes
@@ -151,4 +140,24 @@ if [[ $yes == y* ]]; then
     initdb /usr/local/var/postgres
 else
     echo "Not installing PostgreSQL"
+fi
+
+# Pyenv
+echo "Install Pyenv? (Linuxbrew recommended)"
+read yes
+if [[ $yes == y* ]]; then
+    brew install pyenv
+else
+    echo "Not installing Pyenv"
+fi
+
+# Zsh
+echo "Install Oh My Zsh?"
+read yes
+if [[ $yes == y* ]]; then
+    cd ~/
+    # Oh my zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+    echo "Not installing Oh My Zsh"
 fi
