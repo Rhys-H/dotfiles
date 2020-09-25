@@ -3,7 +3,7 @@
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-  
+
 	# Pretty log output
 	hist = log --graph --pretty=format:'%Cred%h%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)%Creset [%an]' --abbrev-commit --date=relative
 	co = checkout
@@ -11,7 +11,6 @@
 	ci = commit
 	br = branch
 	pl = pull
-	pr = pull --rebase origin master
 	p = push
 	pr = "!f(){ \
 		hub pull-request -m \"$1\" -h `git rev-parse --abbrev-ref HEAD` -b master -l \"master\"; \
