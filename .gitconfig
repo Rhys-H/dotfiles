@@ -15,14 +15,6 @@
 	p = push
 	pr = "!f(){ \
 		hub pull-request -m \"$1\" -h `git rev-parse --abbrev-ref HEAD` -b master -l \"master\"; \
-		hub pull-request -m \"$1\" -h `git rev-parse --abbrev-ref HEAD` -b staging -l \"staging\"; \
-	}; f"
-	cd-pr = "!f(){ \
-		hub pull-request -m \"$1\" -h `git rev-parse --abbrev-ref HEAD` -b production -l \"production\"; \
-		hub pull-request -m \"$1\" -h `git rev-parse --abbrev-ref HEAD` -b staging -l \"staging\"; \
-	}; f"
-	app-pr = "!f(){ \
-		hub pull-request -m \"$1\" -h `git rev-parse --abbrev-ref HEAD` -b master; \
 	}; f"
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -117,7 +109,10 @@
 
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
+        untrackedCache = true
+
+        # Use delta for git's pager
+        pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -158,7 +153,11 @@
 
 [help]
 	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+        autocorrect = 1
+
+[interactive]
+        # USe delta for git diff
+        diffFilter = delta --color-only
 
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
