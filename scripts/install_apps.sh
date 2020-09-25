@@ -44,12 +44,27 @@ if [[ $yes == y* ]]; then
 
     echo "Installing apps that don't require installing recommendations"
     sudo apt install --no-install-recommends \
-        libpq-dev \
+        make \
+        build-essential \
+        libssl-dev \
+        zlib1g-dev \
+        libbz2-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        wget \
+        curl \
+        llvm \
+        libncurses5-dev \
+        xz-utils \
+        tk-dev \
         libxml2-dev \
+        libxmlsec1-dev \
+        libffi-dev \
+        liblzma-dev
+        libpq-dev \
         libxslt1-dev \
         libldap2-dev \
         libsasl2-dev \
-        libffi-dev \
         yarn \
         -y
 
@@ -60,17 +75,6 @@ if [[ $yes == y* ]]; then
     sudo apt purge
 else
     echo "Not installing apps"
-fi
-
-# Zsh
-echo "Install Oh My Zsh?"
-read yes
-if [[ $yes == y* ]]; then
-    cd ~/
-    # Oh my zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-    echo "Not installing Oh My Zsh"
 fi
 
 # Kitty
@@ -91,6 +95,10 @@ if [[ $yes == y* ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.zprofile
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+    test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+    echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
     brew install gcc
     export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/isl@0.18/lib"
     export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/isl@0.18/include"
@@ -138,11 +146,22 @@ else
     echo "Not installing PostgreSQL"
 fi
 
-# GDAL
-echo "Install GDAL?"
+# Pyenv
+echo "Install Pyenv? (Linuxbrew recommended)"
 read yes
 if [[ $yes == y* ]]; then
-    sudo apt install gdal-bin
+    brew install pyenv
 else
-    echo "Not installing GDAL"
+    echo "Not installing Pyenv"
+fi
+
+# Zsh
+echo "Install Oh My Zsh?"
+read yes
+if [[ $yes == y* ]]; then
+    cd ~/
+    # Oh my zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+    echo "Not installing Oh My Zsh"
 fi
