@@ -12,9 +12,6 @@
 	br = branch
 	pl = pull
 	p = push
-	pr = "!f(){ \
-		hub pull-request -m \"$1\" -h `git rev-parse --abbrev-ref HEAD` -b master -l \"master\"; \
-	}; f"
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
