@@ -155,6 +155,9 @@
         # USe delta for git diff
         diffFilter = delta --color-only
 
+[pull]
+	rebase = false
+
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
