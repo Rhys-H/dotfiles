@@ -51,9 +51,7 @@ export GPG_TTY=`tty`
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# pyenv autocompletion and all subcommands
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
