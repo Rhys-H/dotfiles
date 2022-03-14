@@ -105,10 +105,15 @@
 
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
-        untrackedCache = true
+	untrackedCache = true
 
-        # Use delta for git's pager
-        pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+	# Use delta for git's pager
+	pager = delta
+
+[delta]
+	plus-style = syntax "#012800"
+  minus-style = normal "#340001"
+	syntax-theme = Monokai Extended
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -149,11 +154,11 @@
 
 [help]
 	# Automatically correct and execute mistyped commands
-        autocorrect = 1
+	autocorrect = 1
 
 [interactive]
-        # USe delta for git diff
-        diffFilter = delta --color-only
+	# USe delta for git diff
+	diffFilter = delta --color-only
 
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
