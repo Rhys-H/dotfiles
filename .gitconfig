@@ -112,7 +112,7 @@
 
 [delta]
 	plus-style = syntax "#012800"
-  minus-style = normal "#340001"
+        minus-style = normal "#340001"
 	syntax-theme = Monokai Extended
 	# Use n and N to move between diff sections
 	navigate = true
