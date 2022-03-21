@@ -114,6 +114,8 @@
 	plus-style = syntax "#012800"
   minus-style = normal "#340001"
 	syntax-theme = Monokai Extended
+	# Use n and N to move between diff sections
+	navigate = true
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -147,6 +149,7 @@
 [diff]
 	# Detect copies as well as renames
 	renames = copies
+	colorMoved = default
 
 [diff "bin"]
 	# Use `hexdump` to diff binary files
@@ -157,12 +160,13 @@
 	autocorrect = 1
 
 [interactive]
-	# USe delta for git diff
+	# Use delta for git diff
 	diffFilter = delta --color-only
 
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	conflictstyle = diff3
 
 [push]
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
