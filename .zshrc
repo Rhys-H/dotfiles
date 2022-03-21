@@ -36,7 +36,7 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # gpg
-export GPG_TTY=`tty`
+export GPG_TTY=$(tty)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -61,3 +61,6 @@ export PYTHONSTARTUP="$HOME/.pythonrc.py"
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# IL
+export PATH=$PATH:$HOME/Projects/platform-wrapper/bin
