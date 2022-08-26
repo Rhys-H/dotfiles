@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/Projects/dotfiles/.zsh_custom
+ZSH_CUSTOM=$HOME/.zsh_custom
 
 # Zsh and Oh my zsh settings
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -19,6 +19,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  docker
   git
   nvm
 )
@@ -62,5 +63,9 @@ export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# Docker
+zstyle ':completion:*:*:docker:*' option-stacking yes
+
 # IL
 export PATH=$PATH:$HOME/Projects/platform-wrapper/bin
+export KUBECONFIG=~/.kube/oddjob
