@@ -200,3 +200,5 @@
 
 [user]
 	# These values are set in ~/.gitconfig_local
+[gpg]
+	program = /opt/homebrew/bin/gpg
