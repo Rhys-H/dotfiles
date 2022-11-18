@@ -59,8 +59,11 @@ export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# Docker
+# Docker autocomplete
 zstyle ':completion:*:*:docker:*' option-stacking yes
+
+# kubectl autocomplete
+source <(kubectl completion zsh)
 
 # IL
 export PATH=$PATH:$HOME/Projects/platform-wrapper/bin
