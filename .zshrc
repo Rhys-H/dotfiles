@@ -25,7 +25,7 @@ plugins=(
 )
 
 # nvm
-export NVM_LAZY=1
+zstyle ':omz:plugins:nvm' lazy true
 
 # Disable bracketed-paste-magic for new shell performance
 export DISABLE_MAGIC_FUNCTIONS=true
