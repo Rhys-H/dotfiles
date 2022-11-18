@@ -39,17 +39,13 @@ source $ZSH/oh-my-zsh.sh
 # gpg
 export GPG_TTY=$(tty)
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# Editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+# Shell History
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 # pyenv autocompletion and all subcommands
 if command -v pyenv 1>/dev/null 2>&1; then
