@@ -1,5 +1,4 @@
-brew_prefix="$(brew --prefix)"
-eval "$($brew_prefix/bin/brew shellenv)"
+eval $(/opt/homebrew/bin/brew shellenv)
 
 # Docker Buildkit
 export DOCKER_BUILDKIT=1
