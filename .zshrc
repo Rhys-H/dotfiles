@@ -1,9 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
@@ -13,7 +10,6 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Zsh and Oh my zsh settings
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -48,12 +44,19 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 # pyenv autocompletion and all subcommands
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+pyenv() {
+  eval "$(command pyenv init -)"
+  pyenv "$@"
+}
 
 # pythonrc
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
+
+# ruby
+rbenv() {
+  eval "$(command rbenv init -)"
+  rbenv "$@"
+}
 
 # go
 export GOPATH=$HOME/go
@@ -62,8 +65,23 @@ export PATH=$PATH:$GOPATH/bin
 # Docker autocomplete
 zstyle ':completion:*:*:docker:*' option-stacking yes
 
-# kubectl autocomplete
-source <(kubectl completion zsh)
+# lazyload kubectl autocomplete
+# Check if 'kubectl' is a command in $PATH
+if [ $commands[kubectl] ]; then
+
+  # Placeholder 'kubectl' shell function:
+  # Will only be executed on the first call to 'kubectl'
+  kubectl() {
+    # Remove this function, subsequent calls will execute 'kubectl' directly
+    unfunction "$0"
+
+    # Load auto-completion
+    source <(kubectl completion zsh)
+
+    # Execute 'kubectl' binary
+    $0 "$@"
+  }
+fi
 
 # IL
 export PATH=$PATH:$HOME/Projects/platform-wrapper/bin
