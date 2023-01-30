@@ -146,6 +146,9 @@
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgSign = true
 
+[gpg]
+        program = /opt/homebrew/bin/gpg
+
 [diff]
 	# Detect copies as well as renames
 	renames = copies
@@ -167,6 +170,9 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 	conflictstyle = diff3
+
+[pull]
+	rebase = false
 
 [push]
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
