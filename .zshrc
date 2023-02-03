@@ -17,11 +17,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
   docker
   git
-  nvm
+  # nvm
 )
 
 # nvm
-zstyle ':omz:plugins:nvm' lazy true
+# zstyle ':omz:plugins:nvm' lazy true
 
 # Disable bracketed-paste-magic for new shell performance
 export DISABLE_MAGIC_FUNCTIONS=true
