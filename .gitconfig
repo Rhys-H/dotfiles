@@ -147,7 +147,7 @@
 	gpgSign = true
 
 [gpg]
-        program = /opt/homebrew/bin/gpg
+	program = /opt/homebrew/bin/gpg
 
 [diff]
 	# Detect copies as well as renames
