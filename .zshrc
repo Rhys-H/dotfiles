@@ -26,6 +26,8 @@ plugins=(
 # Disable bracketed-paste-magic for new shell performance
 export DISABLE_MAGIC_FUNCTIONS=true
 
+export HOMEBREW_NO_ANALYTICS=1
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
