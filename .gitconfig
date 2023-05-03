@@ -171,6 +171,9 @@
 	log = true
 	conflictstyle = diff3
 
+[fetch]
+	prune = true
+
 [pull]
 	rebase = false
 
