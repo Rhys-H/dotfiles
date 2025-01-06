@@ -15,18 +15,19 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  docker
+  # docker
   git
-  # nvm
+  nvm
 )
 
 # nvm
-# zstyle ':omz:plugins:nvm' lazy true
+zstyle ':omz:plugins:nvm' lazy yes
 
 # Disable bracketed-paste-magic for new shell performance
 export DISABLE_MAGIC_FUNCTIONS=true
 
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_AUTOREMOVE=1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,17 +56,17 @@ pyenv() {
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 # ruby
-rbenv() {
-  eval "$(command rbenv init -)"
-  rbenv "$@"
-}
+# rbenv() {
+#   eval "$(command rbenv init -)"
+#   rbenv "$@"
+# }
 
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Docker autocomplete
-zstyle ':completion:*:*:docker:*' option-stacking yes
+# zstyle ':completion:*:*:docker:*' option-stacking yes
 
 # lazyload kubectl autocomplete
 # Check if 'kubectl' is a command in $PATH
@@ -85,6 +86,8 @@ if [ $commands[kubectl] ]; then
   }
 fi
 
-# IL
-export PATH=$PATH:$HOME/Projects/platform-wrapper/bin
-export KUBECONFIG=~/.kube/oddjob
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
