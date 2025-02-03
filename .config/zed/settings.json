@@ -1,0 +1,128 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+{
+  "preferred_line_length": 120,
+  "wrap_guides": [120],
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+
+  "format_on_save": "on",
+  "formatter": {
+    "code_actions": {
+      "source.organizeImports": true
+    }
+  },
+
+  "project_panel": {
+    "dock": "right"
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "features": {
+      "inline_completion_provider": "copilot"
+  },
+
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  "ui_font_size": 13,
+  "buffer_font_size": 13,
+  "ui_font_family": "SF Mono",
+  "buffer_font_family": "SF Mono",
+  "ui_font_fallbacks": ["Menlo"],
+  "buffer_font_fallbacks": ["Menlo"],
+
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/*.map"
+  ],
+
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "cursor_blink": false,
+  "terminal": {
+      "font_size": 13,
+      "font_family": "SF Mono",
+      "font_fallbacks": ["Menlo"],
+      "blinking": "off",
+      "copy_on_select": true
+    },
+
+  "auto_install_extensions": {
+    "html": true,
+    "ruff": true
+  },
+  "languages": {
+      "Python": {
+        "format_on_save": "on",
+        "formatter": [
+          {
+            "code_actions": {
+              "source.organizeImports.ruff": true,
+              "source.fixAll.ruff": true
+            }
+          },
+          {
+            "language_server": {
+              "name": "ruff"
+            }
+          }
+        ]
+      },
+      "HTML": {
+        "formatter": {
+          "external": {
+            "command": "djlint",
+            "arguments": [
+              "-",
+              "--reformat",
+              "--format-css",
+              "--format-js",
+              "--indent",
+              "4",
+              "--max-blank-lines",
+              "2",
+              "--profile",
+              "django",
+              "--quiet"
+            ]
+          }
+        }
+      }
+    },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "openFilesOnly",
+          "typeCheckingMode": "standard"
+        },
+        "python": {
+          "pythonPath": "venv/bin/python"
+        }
+      }
+    }
+  }
+}
