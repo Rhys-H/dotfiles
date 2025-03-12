@@ -55,6 +55,9 @@ pyenv() {
 # pythonrc
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
+# Allow Node to use 8GB of memory for Pylance with large codebases
+export NODE_OPTIONS="--max-old-space-size=8192"
+
 # ruby
 # rbenv() {
 #   eval "$(command rbenv init -)"
