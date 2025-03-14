@@ -7,4 +7,4 @@ esac
 
 alias k="kubectl"
 
-alias oj="cd ~/Projects/oddjob && source ./venv/bin/activate"
+alias hg="history | grep"
