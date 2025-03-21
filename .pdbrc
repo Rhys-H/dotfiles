@@ -17,3 +17,7 @@ alias pl p_ locals() local:
 # Next and list, and step and list.
 alias nl n;;l
 alias sl s;;l
+
+# IPython interactive shell from pdb session.
+import IPython
+alias emb IPython.embed()
