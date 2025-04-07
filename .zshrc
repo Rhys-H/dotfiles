@@ -57,8 +57,9 @@ pyenv() {
 # pythonrc
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
-# Allow Node to use 8GB of memory for Pylance with large codebases
-export NODE_OPTIONS="--max-old-space-size=8192"
+# datadogpy disable any statsd metric collection
+export DD_DOGSTATSD_DISABLE=True
+export DD_INSTRUMENTATION_TELEMETRY_ENABLED=False
 
 # ruby
 # rbenv() {
