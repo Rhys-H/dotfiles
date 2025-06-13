@@ -54,7 +54,8 @@ pyenv() {
   pyenv "$@"
 }
 
-# pythonrc
+# python
+export PIP_REQUIRE_VIRTUALENV=true
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 # datadogpy disable any statsd metric collection
