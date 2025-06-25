@@ -18,18 +18,31 @@
     }
   },
 
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "search": {
+    "button": false
+  },
+  "git_panel": {
+    "dock": "right"
+  },
   "project_panel": {
     "dock": "right"
   },
-  "assistant": {
+  "agent": {
+    "dock": "left",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "claude-sonnet-4"
     },
     "version": "2"
   },
   "features": {
-      "inline_completion_provider": "copilot"
+      "edit_prediction_provider": "copilot"
   },
 
   "telemetry": {
@@ -72,47 +85,73 @@
 
   "auto_install_extensions": {
     "html": true,
-    "ruff": true
+    "ruff": true,
+    "basedpyright": true
   },
   "languages": {
-      "Python": {
-        "format_on_save": "on",
-        "formatter": [
-          {
-            "code_actions": {
-              "source.organizeImports.ruff": true,
-              "source.fixAll.ruff": true
-            }
-          },
-          {
-            "language_server": {
-              "name": "ruff"
-            }
+    "Python": {
+      "language_servers": ["basedpyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
           }
-        ]
-      },
-      "HTML": {
-        "formatter": {
-          "external": {
-            "command": "djlint",
-            "arguments": [
-              "-",
-              "--reformat",
-              "--format-css",
-              "--format-js",
-              "--indent",
-              "4",
-              "--max-blank-lines",
-              "2",
-              "--profile",
-              "django",
-              "--quiet"
-            ]
+        },
+        {
+          "language_server": {
+            "name": "ruff"
           }
         }
+      ]
+    },
+    "HTML": {
+      "formatter": {
+        "external": {
+          "command": "djlint",
+          "arguments": [
+            "-",
+            "--reformat",
+            "--format-css",
+            "--format-js",
+            "--indent",
+            "4",
+            "--max-blank-lines",
+            "2",
+            "--profile",
+            "django",
+            "--quiet"
+          ]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "basedpyright": {
+      "binary": {
+        "path": ".venv/bin/basedpyright-langserver",
+        "arguments": ["--stdio"]
+      },
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        },
+        "basedpyright.analysis": {
+          "diagnosticMode": "openFilesOnly",
+          "typeCheckingMode": "standard",
+          "useLibraryCodeForTypes": true,
+          "autoImportCompletions": true,
+          "autoSearchPaths": true,
+          "useTypingExtensions": true,
+          "inlayHints": {
+            "callArgumentNames": false
+          }
+        },
+        "basedpyright.disableOrganizeImports": true
+
       }
     },
-  "lsp": {
     "pyright": {
       "settings": {
         "python.analysis": {
@@ -120,9 +159,12 @@
           "typeCheckingMode": "standard"
         },
         "python": {
-          "pythonPath": "venv/bin/python"
+          "pythonPath": ".venv/bin/python"
         }
       }
     }
+  },
+  "jupyter": {
+    "enabled": false
   }
 }
