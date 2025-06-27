@@ -87,6 +87,9 @@
 		fi \
 	}; f"
 
+	# WIP commit alias - skips CI checks
+	wip = commit --message='TMP: [skip ci]' --allow-empty --no-verify
+
 [core]
 	excludesFile = ~/.gitignore
 
