@@ -47,6 +47,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_NO_STORE
+setopt HIST_IGNORE_SPACE
 
 # pyenv autocompletion and all subcommands
 pyenv() {
