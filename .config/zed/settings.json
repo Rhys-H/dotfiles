@@ -7,16 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "format_on_save": "on",
+  "code_actions_on_format": {
+    "source.organizeImports": true
+  },
   "preferred_line_length": 120,
   "wrap_guides": [120],
   "scroll_beyond_last_line": "vertical_scroll_margin",
-
-  "format_on_save": "on",
-  "formatter": {
-    "code_actions": {
-      "source.organizeImports": true
-    }
-  },
 
   "collaboration_panel": {
     "button": false
@@ -34,15 +31,15 @@
     "dock": "right"
   },
   "agent": {
+    "default_profile": "ask",
     "dock": "left",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
-    },
-    "version": "2"
+    }
   },
   "features": {
-      "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot"
   },
 
   "telemetry": {
@@ -66,7 +63,8 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    "**/*.map"
+    "**/*.map",
+    "**/__pycache__"
   ],
 
   "theme": {
@@ -76,28 +74,27 @@
   },
   "cursor_blink": false,
   "terminal": {
-      "font_size": 13,
-      "font_family": "SF Mono",
-      "font_fallbacks": ["Menlo"],
-      "blinking": "off",
-      "copy_on_select": true
-    },
+    "font_size": 13,
+    "font_family": "SF Mono",
+    "font_fallbacks": ["Menlo"],
+    "blinking": "off",
+    "copy_on_select": true
+  },
 
   "auto_install_extensions": {
     "html": true,
-    "ruff": true,
-    "basedpyright": true
+    "codebook": true
   },
   "languages": {
     "Python": {
-      "language_servers": ["basedpyright", "ruff"],
+      "language_servers": ["ty", "!basedpyright", "ruff", "codebook"],
       "format_on_save": "on",
       "formatter": [
         {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
+          "code_action": "source.organizeImports.ruff"
+        },
+        {
+          "code_action": "source.fixAll.ruff"
         },
         {
           "language_server": {
@@ -128,28 +125,14 @@
     }
   },
   "lsp": {
-    "basedpyright": {
-      "binary": {
-        "path": ".venv/bin/basedpyright-langserver",
-        "arguments": ["--stdio"]
-      },
+    "ty": {
       "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
+        "inlayHints": {
+          "variableTypes": false
         },
-        "basedpyright.analysis": {
-          "diagnosticMode": "openFilesOnly",
-          "typeCheckingMode": "standard",
-          "useLibraryCodeForTypes": true,
-          "autoImportCompletions": true,
-          "autoSearchPaths": true,
-          "useTypingExtensions": true,
-          "inlayHints": {
-            "callArgumentNames": false
-          }
-        },
-        "basedpyright.disableOrganizeImports": true
-
+        "experimental": {
+          "autoImport": true
+        }
       }
     },
     "pyright": {
@@ -163,8 +146,5 @@
         }
       }
     }
-  },
-  "jupyter": {
-    "enabled": false
   }
 }
