@@ -119,6 +119,8 @@
 	# Use n and N to move between diff sections
 	navigate = true
 	dark = true
+	hyperlinks = true
+	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
 [column]
 	ui = auto
