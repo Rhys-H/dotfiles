@@ -15,6 +15,7 @@ set expandtab
 set textwidth=100
 set backspace=indent,eol,start
 filetype plugin indent on
+setlocal spell spelllang=en_gb
 
 " Search
 set ignorecase
