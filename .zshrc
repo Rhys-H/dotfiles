@@ -63,6 +63,12 @@ export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export DD_DOGSTATSD_DISABLE=True
 export DD_INSTRUMENTATION_TELEMETRY_ENABLED=False
 
+export DD_IAST_ENABLED=False
+export DD_PROFILING_ENABLED=False
+export DD_RUNTIME_METRICS_ENABLED=False
+export DD_TRACE_ENABLED=False
+export DD_TRACE_OTEL_ENABLED=False
+
 # ruby
 # rbenv() {
 #   eval "$(command rbenv init -)"
@@ -93,6 +99,16 @@ if [ $commands[kubectl] ]; then
     $0 "$@"
   }
 fi
+
+# Allow Ctrl-z to toggle between suspend and resume
+function Resume {
+  fg
+  zle push-input
+  BUFFER=""
+  zle accept-line
+}
+zle -N Resume
+bindkey "^Z" Resume
 
 # Pomodoro CLI
 # Uses:
