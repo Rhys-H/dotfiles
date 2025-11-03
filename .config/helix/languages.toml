@@ -1,0 +1,11 @@
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+auto-format = true
+formatter = {command = 'sh', args = ["-c", "ruff check --fix - | ruff format -"]}
+language-servers = [
+  "ruff", "pylsp"
+]
