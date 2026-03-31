@@ -159,3 +159,5 @@ pomodoro() {
   done
 }
 
+# UV
+. "$HOME/.local/bin/env"
