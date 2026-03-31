@@ -7,44 +7,52 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "format_on_save": "on",
   "code_actions_on_format": {
-    "source.organizeImports": true
+    "source.organizeImports": true,
   },
   "preferred_line_length": 120,
   "wrap_guides": [120],
   "scroll_beyond_last_line": "vertical_scroll_margin",
 
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "notification_panel": {
-    "button": false
+    "button": false,
   },
   "search": {
-    "button": false
+    "button": false,
   },
   "git_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "project_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "agent": {
     "default_profile": "ask",
     "dock": "left",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5-codex"
-    }
-  },
-  "features": {
-    "edit_prediction_provider": "copilot"
+      "model": "gpt-5-codex",
+    },
   },
 
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
 
   "ui_font_size": 13,
@@ -64,13 +72,13 @@
     "**/.classpath",
     "**/.settings",
     "**/*.map",
-    "**/__pycache__"
+    "**/__pycache__",
   ],
 
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "cursor_blink": false,
   "terminal": {
@@ -78,30 +86,30 @@
     "font_family": "SF Mono",
     "font_fallbacks": ["Menlo"],
     "blinking": "off",
-    "copy_on_select": true
+    "copy_on_select": true,
   },
 
   "auto_install_extensions": {
     "html": true,
-    "codebook": true
+    "codebook": true,
   },
   "languages": {
     "Python": {
-      "language_servers": ["ty", "!basedpyright", "ruff", "codebook"],
+      "language_servers": ["ty", "ruff", "codebook", "!basedpyright", "!pyrefly", "!pyright", "!pylsp"],
       "format_on_save": "on",
       "formatter": [
         {
-          "code_action": "source.organizeImports.ruff"
+          "code_action": "source.organizeImports.ruff",
         },
         {
-          "code_action": "source.fixAll.ruff"
+          "code_action": "source.fixAll.ruff",
         },
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
+            "name": "ruff",
+          },
+        },
+      ],
     },
     "HTML": {
       "formatter": {
@@ -118,33 +126,33 @@
             "2",
             "--profile",
             "django",
-            "--quiet"
-          ]
-        }
-      }
-    }
+            "--quiet",
+          ],
+        },
+      },
+    },
   },
   "lsp": {
     "ty": {
       "settings": {
         "inlayHints": {
-          "variableTypes": false
+          "variableTypes": false,
         },
         "experimental": {
-          "autoImport": true
-        }
-      }
+          "autoImport": true,
+        },
+      },
     },
     "pyright": {
       "settings": {
         "python.analysis": {
           "diagnosticMode": "openFilesOnly",
-          "typeCheckingMode": "standard"
+          "typeCheckingMode": "standard",
         },
         "python": {
-          "pythonPath": ".venv/bin/python"
-        }
-      }
-    }
-  }
+          "pythonPath": ".venv/bin/python",
+        },
+      },
+    },
+  },
 }
