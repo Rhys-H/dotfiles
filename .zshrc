@@ -60,14 +60,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 # datadogpy disable any statsd metric collection
-export DD_DOGSTATSD_DISABLE=True
-export DD_INSTRUMENTATION_TELEMETRY_ENABLED=False
-
-export DD_IAST_ENABLED=False
-export DD_PROFILING_ENABLED=False
-export DD_RUNTIME_METRICS_ENABLED=False
-export DD_TRACE_ENABLED=False
-export DD_TRACE_OTEL_ENABLED=False
+export DD_TRACE_ENABLED=false
+export DD_DOGSTATSD_DISABLE=1
+export DD_APM_TRACING_ENABLED=false
 
 # ruby
 # rbenv() {
