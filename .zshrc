@@ -49,6 +49,10 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_NO_STORE
 setopt HIST_IGNORE_SPACE
 
+# gh cli
+export GH_TELEMETRY=false
+export DO_NO_TRACK=true
+
 # pyenv autocompletion and all subcommands
 pyenv() {
   eval "$(command pyenv init -)"
