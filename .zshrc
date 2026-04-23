@@ -28,6 +28,7 @@ export DISABLE_MAGIC_FUNCTIONS=true
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_AUTOREMOVE=1
+export HOMEBREW_NO_ENV_HINTS=1
 
 source $ZSH/oh-my-zsh.sh
 
