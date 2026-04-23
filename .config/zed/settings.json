@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "outline_panel": {
+    "dock": "left"
+  },
   "agent_servers": {
     "github-copilot-cli": {
       "type": "registry"
@@ -27,6 +30,7 @@
   "scroll_beyond_last_line": "vertical_scroll_margin",
 
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "notification_panel": {
