@@ -135,6 +135,7 @@
 
 [tag]
 	sort = version:refname
+	gpgSign = true
 
 [apply]
 	# Detect whitespace errors when applying a patch
